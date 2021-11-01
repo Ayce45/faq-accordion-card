@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | FAQ Accordion Card</title>
+    <script src="https://cdn-tailwindcss.vercel.app/"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "very-dark": "hsl(238, 29%, 16%)",
+              "soft-red": "hsl(14, 88%, 65%)",
+              "soft-violet": "hsl(273, 75%, 66%)",
+              "soft-blue": "hsl(240, 73%, 65%)",
+              "grayish-blue": "hsl(237, 12%, 33%)",
+              "dark-blue": "hsl(240, 6%, 50%)",
+              "light-blue": "hsl(240, 5%, 91%)",
+            },
+            fontFamily: {
+              sans: "KumbhSans",
+            },
+            screens: {
+              d: "1440px",
+            },
+            boxShadow: {
+              "3xl": "0 35px 60px -15px rgba(0, 0, 0, 0.3)",
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @font-face {
+        font-family: "KumbhSans";
+        font-weight: 400;
+        src: url("fonts/KumbhSans-Regular.ttf") format("truetype");
+      }
+
+      @font-face {
+        font-family: "KumbhSans";
+        font-weight: 700;
+        src: url("fonts/KumbhSans-Bold.ttf") format("truetype");
+      }
+
+      body {
+        @apply text-xs bg-gradient-to-b from-soft-violet to-soft-blue h-screen w-screen;
+      }
+
+      hr {
+        @apply bg-grayish-blue h-px border-none bg-opacity-20;
+      }
+
+      details[open] img {
+        transform: rotate(180deg);
+      }
+
+      details[open] summary {
+        @apply font-bold;
+      }
+
+      .attribution {
+        display: none;
+        font-size: 11px;
+        text-align: center;
+      }
+
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex items-center justify-center h-full w-full">
+      <section
+        id="faq"
+        class="
+          relative
+          bg-white
+          mx-6
+          rounded-3xl
+          px-5
+          pt-[125px]
+          pb-[55px]
+          z-10
+          w-full
+          d:max-w-[921px]
+          shadow-3xl
+          d:flex d:py-[72px] d:px-[96px] d:overflow-hidden
+          transition-all
+        "
+      >
+        <div class="d:w-1/2">
+          <!-- Mobile -->
+          <img
+            class="
+              absolute
+              w-[256px]
+              mx-auto
+              left-0
+              right-0
+              top-[-115px]
+              z-30
+              d:hidden
+            "
+            src="images/illustration-woman-online-mobile.svg"
+            alt="Illustration Woman Online"
+          />
+          <img
+            class="absolute mx-auto left-0 right-0 top-[5px] z-20 d:hidden"
+            src="images/bg-pattern-mobile.svg"
+            alt="Background Pattern Mobile"
+          />
+          <!-- Desktop -->
+          <img
+            class="
+              absolute
+              my-auto
+              top-0
+              bottom-0
+              z-30
+              hidden
+              d:block
+              left-[-90px]
+            "
+            src="images/illustration-woman-online-desktop.svg"
+            alt="Illustration Woman Online"
+          />
+          <img
+            class="
+              absolute
+              my-auto
+              top-0
+              bottom-1
+              z-20
+              hidden
+              d:block
+              left-[-480px]
+              top-[-140px]
+            "
+            src="images/bg-pattern-desktop.svg"
+            alt="Background Pattern Mobile"
+          />
+        </div>
+        <div class="d:pl-12 d:w-1/2">
+          <h1 class="text-3xl text-very-dark font-bold text-center d:text-left">
+            FAQ
+          </h1>
+          <ul class="mt-4 group">
+            <li class="pt-3">
+              <details>
+                <summary
+                  class="
+                    text-sm
+                    list-none
+                    relative
+                    d:hover:text-soft-red
+                    cursor-pointer
+                  "
+                >
+                  How many team members can I invite?
+                  <img
+                    class="absolute right-0 top-0 bottom-0 my-auto"
+                    src="images/icon-arrow-down.svg"
+                    alt="Arrow Down"
+                  />
+                </summary>
+                <div class="mt-3 text-dark-blue">
+                  You can invite up to 2 additional users on the Free plan.
+                  There is no limit on team members for the Premium plan.
+                </div>
+              </details>
+              <hr class="mt-4" />
+            </li>
+            <li class="pt-3">
+              <details>
+                <summary
+                  class="
+                    text-sm
+                    list-none
+                    relative
+                    d:hover:text-soft-red
+                    cursor-pointer
+                  "
+                >
+                  What is the maximum file upload size?
+                  <img
+                    class="absolute right-0 top-0 bottom-0 my-auto"
+                    src="images/icon-arrow-down.svg"
+                    alt="Arrow Down"
+                  />
+                </summary>
+                <div class="mt-3 text-dark-blue">
+                  No more than 2GB. All files in your account must fit your
+                  allotted storage space.
+                </div>
+              </details>
+              <hr class="mt-4" />
+            </li>
+            <li class="pt-3">
+              <details>
+                <summary
+                  class="
+                    text-sm
+                    list-none
+                    relative
+                    d:hover:text-soft-red
+                    group
+                    cursor-pointer
+                  "
+                >
+                  How do I reset my password?
+                  <img
+                    class="absolute right-0 top-0 bottom-0 my-auto"
+                    src="images/icon-arrow-down.svg"
+                    alt="Arrow Down"
+                  />
+                </summary>
+                <div class="mt-3 text-dark-blue">
+                  Click “Forgot password” from the login page or “Change
+                  password” from your profile page. A reset link will be emailed
+                  to you.
+                </div>
+              </details>
+              <hr class="mt-4" />
+            </li>
+            <li class="pt-3">
+              <details>
+                <summary
+                  class="
+                    text-sm
+                    list-none
+                    relative
+                    d:hover:text-soft-red
+                    cursor-pointer
+                  "
+                >
+                  Can I cancel my subscription?
+                  <img
+                    class="absolute right-0 top-0 bottom-0 my-auto"
+                    src="images/icon-arrow-down.svg"
+                    alt="Arrow Down"
+                  />
+                </summary>
+                <div class="mt-3 text-dark-blue">
+                  Yes! Send us a message and we’ll process your request no
+                  questions asked. Do you provide additional support? Chat and
+                  email support is available 24/7. Phone lines are open during
+                  normal business hours.
+                </div>
+              </details>
+              <hr class="mt-4" />
+            </li>
+            <li class="pt-3">
+              <details>
+                <summary
+                  class="
+                    text-sm
+                    list-none
+                    relative
+                    d:hover:text-soft-red
+                    cursor-pointer
+                  "
+                >
+                  Do you provide additional support?
+                  <img
+                    class="absolute right-0 top-0 bottom-0 my-auto"
+                    src="images/icon-arrow-down.svg"
+                    alt="Arrow Down"
+                  />
+                </summary>
+                <div class="mt-3 text-dark-blue">
+                  Chat and email support is available 24/7. Phone lines are open
+                  during normal business hours.
+                </div>
+              </details>
+              <hr class="mt-4" />
+            </li>
+            <img
+              class="
+                fixed
+                my-auto
+                top-0
+                bottom-0
+                z-40
+                hidden
+                d:block
+                transform
+                translate-x-[-610px] translate-y-[40px]
+                group-hover:translate-x-[-640px]
+                transition-all
+              "
+              src="images/illustration-box-desktop.svg"
+              alt="Illustration Box Desktop"
+            />
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </body>
+</html>
